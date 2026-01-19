@@ -82,8 +82,8 @@ const TeamCredits = () => {
               Built with constraints. Shipped with pride.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a 
-                href="https://github.com" 
+            <a 
+                href="https://github.com/AriBjornOlafsson/golden-plate-ai" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-glacier text-primary-foreground font-medium hover:bg-glacier/90 transition-colors"
