@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { User, Code2, Server, ExternalLink } from "lucide-react";
+import { Code2, Server, ExternalLink, Linkedin, Award } from "lucide-react";
 
 const team = [
   {
@@ -42,7 +42,8 @@ const TeamCredits = () => {
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="font-mono text-sm text-glacier uppercase tracking-widest">The Team</span>
+          <span className="font-mono text-sm text-glacier uppercase tracking-widest">Gervigreindarreglan</span>
+          <p className="text-xs text-muted-foreground mt-1 mb-4">(Order of the AI)</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
             Two engineers,<br />
             <span className="text-gradient-ember">one mission</span>
@@ -71,6 +72,30 @@ const TeamCredits = () => {
           ))}
         </div>
 
+        {/* Special Thanks */}
+        <div className={`text-center mb-16 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-block p-6 rounded-xl border border-border/50 bg-secondary/30">
+            <p className="text-sm text-muted-foreground mb-3">Special thanks to</p>
+            <a 
+              href="https://www.linkedin.com/in/bjartur-thorlacius/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 group"
+            >
+              <div className="w-12 h-12 rounded-full bg-glacier/20 flex items-center justify-center">
+                <Award className="w-6 h-6 text-glacier" />
+              </div>
+              <div className="text-left">
+                <div className="font-display font-semibold group-hover:text-glacier transition-colors flex items-center gap-2">
+                  Bjartur Thorlacius
+                  <Linkedin className="w-4 h-4 text-muted-foreground group-hover:text-glacier" />
+                </div>
+                <div className="text-xs text-muted-foreground">Læknanemi og reikniverk- og tölvunarfræðingur</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
         {/* CTA */}
         <div className={`text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-block p-8 rounded-2xl border border-glacier/30 bg-glacier/5 max-w-2xl">
@@ -82,7 +107,7 @@ const TeamCredits = () => {
               Built with constraints. Shipped with pride.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-            <a 
+              <a 
                 href="https://github.com/AriBjornOlafsson/golden-plate-ai" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -99,6 +124,26 @@ const TeamCredits = () => {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Competition Link */}
+        <div className={`text-center mt-12 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <a 
+            href="https://gervigreindarkeppni.is/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-6 py-4 rounded-xl border border-ember/30 bg-ember/5 hover:bg-ember/10 transition-colors group"
+          >
+            <img 
+              src="https://gervigreindarkeppni.is/images/logo.svg" 
+              alt="Gervigreindarkeppni Íslands" 
+              className="h-8 w-auto"
+            />
+            <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              Gervigreindarkeppni Íslands 2026
+            </span>
+            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-ember" />
+          </a>
         </div>
       </div>
     </section>
