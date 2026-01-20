@@ -10,7 +10,7 @@ const team = [
     linkedin: "https://www.linkedin.com/in/valdimar-%C3%A1g%C3%BAst-eggertsson-8210236",
   },
   {
-    name: "Ari Bjorn Olafsson",
+    name: "Ari Björn Ólafsson",
     role: "Full Stack & DevOps",
     description: "Data infrastructure, compression packaging, submission validation, and this very website.",
     icon: Code2,
