@@ -20,6 +20,7 @@ const IcelandicDemo = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [showPrediction, setShowPrediction] = useState(false);
+  const [activePrediction, setActivePrediction] = useState("");
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,6 +50,7 @@ const IcelandicDemo = () => {
         setCurrentStep(0);
         setDisplayText("");
         setShowPrediction(false);
+        setActivePrediction("");
       }, 3000);
       return () => clearTimeout(resetTimer);
     }
@@ -67,6 +69,7 @@ const IcelandicDemo = () => {
     // Show prediction
     if (!showPrediction) {
       const predTimer = setTimeout(() => {
+        setActivePrediction(step.prediction);
         setShowPrediction(true);
       }, 400);
       return () => clearTimeout(predTimer);
@@ -74,15 +77,14 @@ const IcelandicDemo = () => {
 
     // Accept prediction and move to next step
     const acceptTimer = setTimeout(() => {
-      setDisplayText(step.full);
       setShowPrediction(false);
+      setActivePrediction("");
+      setDisplayText(step.full);
       setCurrentStep((prev) => prev + 1);
     }, 1200);
 
     return () => clearTimeout(acceptTimer);
   }, [isVisible, currentStep, displayText, showPrediction]);
-
-  const currentPrediction = demoSequence[currentStep]?.prediction || "";
 
   return (
     <section ref={sectionRef} className="relative py-24 bg-basalt-light/30">
@@ -119,7 +121,7 @@ const IcelandicDemo = () => {
               <div className="font-mono text-lg md:text-xl leading-relaxed">
                 <span className="text-foreground">{displayText}</span>
                 <span className={`px-1 rounded transition-opacity duration-200 ${showPrediction ? 'text-glacier bg-glacier/20 opacity-100' : 'opacity-0'}`}>
-                  {currentPrediction || '\u00A0'}
+                  {activePrediction || '\u00A0'}
                 </span>
                 <span className="inline-block w-0.5 h-5 bg-glacier ml-0.5 animate-pulse" />
               </div>
@@ -128,7 +130,7 @@ const IcelandicDemo = () => {
               <div className={`mt-6 flex items-center gap-3 text-sm h-6 transition-opacity duration-200 ${showPrediction ? 'opacity-100' : 'opacity-0'}`}>
                 <Sparkles className="w-4 h-4 text-ember" />
                 <span className="text-muted-foreground">Prediction:</span>
-                <span className="font-mono text-glacier">"{currentPrediction}"</span>
+                <span className="font-mono text-glacier">"{activePrediction}"</span>
                 <span className="text-muted-foreground">•</span>
                 <span className="text-ember font-mono">93.2% confidence</span>
               </div>
