@@ -54,10 +54,10 @@ const Navigation = () => {
           </div>
 
           {/* Status badge */}
-          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-ember/30 bg-ember/5">
+          {/* <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-ember/30 bg-ember/5">
             <span className="w-2 h-2 rounded-full bg-ember animate-pulse" />
             <span className="text-xs font-mono text-ember">2nd Place</span>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <button
