@@ -7,12 +7,14 @@ const team = [
     role: "ML Ops Specialist",
     description: "Model architecture, training pipelines, quantization wizardry, and remote GPU operations.",
     icon: Server,
+    linkedin: "https://www.linkedin.com/in/valdimar-%C3%A1g%C3%BAst-eggertsson-8210236",
   },
   {
     name: "Ari Bjorn Olafsson",
     role: "Full Stack & DevOps",
     description: "Data infrastructure, compression packaging, submission validation, and this very website.",
     icon: Code2,
+    linkedin: "https://www.linkedin.com/in/aribjorn",
   },
 ];
 
@@ -60,14 +62,22 @@ const TeamCredits = () => {
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="stat-card h-full text-center">
+              <a 
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="stat-card h-full text-center block group hover:border-glacier/50 transition-colors"
+              >
                 <div className="w-20 h-20 rounded-full bg-secondary mx-auto mb-6 flex items-center justify-center">
                   <member.icon className="w-10 h-10 text-glacier" />
                 </div>
-                <h3 className="font-display text-2xl font-bold mb-1">{member.name}</h3>
+                <h3 className="font-display text-2xl font-bold mb-1 group-hover:text-glacier transition-colors flex items-center justify-center gap-2">
+                  {member.name}
+                  <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-glacier" />
+                </h3>
                 <div className="text-sm font-mono text-ember mb-4">{member.role}</div>
                 <p className="text-muted-foreground">{member.description}</p>
-              </div>
+              </a>
             </div>
           ))}
         </div>
@@ -132,17 +142,14 @@ const TeamCredits = () => {
             href="https://gervigreindarkeppni.is/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-4 rounded-xl border border-ember/30 bg-ember/5 hover:bg-ember/10 transition-colors group"
+            className="inline-flex items-center gap-4 px-8 py-6 rounded-xl bg-[#1a1f2e] hover:bg-[#242a3d] transition-colors group border border-border/30"
           >
             <img 
-              src="https://gervigreindarkeppni.is/images/logo.svg" 
+              src="https://gervigreindarkeppni.is/logos/GKI_Logo_Text_Blue_Horizontal.png" 
               alt="Gervigreindarkeppni Íslands" 
-              className="h-8 w-auto"
+              className="h-12 w-auto"
             />
-            <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-              Gervigreindarkeppni Íslands 2026
-            </span>
-            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-ember" />
+            <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-glacier" />
           </a>
         </div>
       </div>

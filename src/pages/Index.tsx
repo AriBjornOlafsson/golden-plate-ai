@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import IcelandicDemo from "@/components/IcelandicDemo";
 import ConstraintWall from "@/components/ConstraintWall";
 import DataPipeline from "@/components/DataPipeline";
 import ModelEvolution from "@/components/ModelEvolution";
@@ -17,6 +18,10 @@ const Index = () => {
       <main>
         <section id="hero">
           <HeroSection />
+        </section>
+
+        <section id="demo">
+          <IcelandicDemo />
         </section>
         
         <section id="constraints">
