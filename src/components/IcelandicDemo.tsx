@@ -2,10 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import { Sparkles, Type } from "lucide-react";
 
 const demoSequence = [
-  { typed: "Ísland er ", prediction: "land", full: "Ísland er land " },
-  { typed: "Ísland er land ", prediction: "eldfjalla", full: "Ísland er land eldfjalla " },
-  { typed: "Ísland er land eldfjalla ", prediction: "og", full: "Ísland er land eldfjalla og " },
-  { typed: "Ísland er land eldfjalla og ", prediction: "jökla", full: "Ísland er land eldfjalla og jökla" },
+  { typed: "Það er ", prediction: "rólegt", full: "Það er rólegt " },
+  { typed: "Það er rólegt ", prediction: "í", full: "Það er rólegt í " },
+  { typed: "Það er rólegt í ", prediction: "bænum", full: "Það er rólegt í bænum " },
+  { typed: "Það er rólegt í bænum ", prediction: "og", full: "Það er rólegt í bænum og " },
+  { typed: "Það er rólegt í bænum og ", prediction: "flestir", full: "Það er rólegt í bænum og flestir " },
+  { typed: "Það er rólegt í bænum og flestir ", prediction: "eru", full: "Það er rólegt í bænum og flestir eru " },
+  { typed: "Það er rólegt í bænum og flestir eru ", prediction: "að", full: "Það er rólegt í bænum og flestir eru að " },
+  { typed: "Það er rólegt í bænum og flestir eru að ", prediction: "sinna", full: "Það er rólegt í bænum og flestir eru að sinna " },
+  { typed: "Það er rólegt í bænum og flestir eru að sinna ", prediction: "sínum", full: "Það er rólegt í bænum og flestir eru að sinna sínum " },
+  { typed: "Það er rólegt í bænum og flestir eru að sinna sínum ", prediction: "daglegu", full: "Það er rólegt í bænum og flestir eru að sinna sínum daglegu " },
+  { typed: "Það er rólegt í bænum og flestir eru að sinna sínum daglegu ", prediction: "verkum.", full: "Það er rólegt í bænum og flestir eru að sinna sínum daglegu verkum." },
 ];
 
 const IcelandicDemo = () => {
@@ -111,24 +118,20 @@ const IcelandicDemo = () => {
             <div className="min-h-[120px] flex flex-col justify-center">
               <div className="font-mono text-lg md:text-xl leading-relaxed">
                 <span className="text-foreground">{displayText}</span>
-                {showPrediction && (
-                  <span className="text-glacier bg-glacier/20 px-1 rounded animate-pulse">
-                    {currentPrediction}
-                  </span>
-                )}
+                <span className={`px-1 rounded transition-opacity duration-200 ${showPrediction ? 'text-glacier bg-glacier/20 opacity-100' : 'opacity-0'}`}>
+                  {currentPrediction || '\u00A0'}
+                </span>
                 <span className="inline-block w-0.5 h-5 bg-glacier ml-0.5 animate-pulse" />
               </div>
 
-              {/* Prediction confidence bar */}
-              {showPrediction && (
-                <div className="mt-6 flex items-center gap-3 text-sm">
-                  <Sparkles className="w-4 h-4 text-ember" />
-                  <span className="text-muted-foreground">Prediction:</span>
-                  <span className="font-mono text-glacier">"{currentPrediction}"</span>
-                  <span className="text-muted-foreground">•</span>
-                  <span className="text-ember font-mono">93.2% confidence</span>
-                </div>
-              )}
+              {/* Prediction confidence bar - always rendered to prevent layout shift */}
+              <div className={`mt-6 flex items-center gap-3 text-sm h-6 transition-opacity duration-200 ${showPrediction ? 'opacity-100' : 'opacity-0'}`}>
+                <Sparkles className="w-4 h-4 text-ember" />
+                <span className="text-muted-foreground">Prediction:</span>
+                <span className="font-mono text-glacier">"{currentPrediction}"</span>
+                <span className="text-muted-foreground">•</span>
+                <span className="text-ember font-mono">93.2% confidence</span>
+              </div>
             </div>
 
             {/* Stats footer */}
