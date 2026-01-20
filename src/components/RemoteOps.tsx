@@ -64,9 +64,8 @@ const RemoteOps = () => {
             <span className="text-glacier">via tailnet</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            We trained under 1 MB constraints, but we also trained under 
-            "where is the GPU?" constraints. The RTX 3080 sits in Reykjavík. 
-            We SSH from Berlin.
+            Training happens everywhere: MacBooks for prototyping, RunPod rental clusters for scale,
+            and an RTX 3080 in Reykjavík accessed via Tailscale from Berlin.
           </p>
         </div>
 
@@ -113,12 +112,12 @@ const RemoteOps = () => {
                   <Server className="w-6 h-6 text-ember" />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-bold mb-1">The Rig in Iceland</h3>
+                  <h3 className="font-display text-lg font-bold mb-1">Training Infrastructure</h3>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• RTX 3080 (10 GB VRAM)</li>
-                    <li>• 32 GB RAM</li>
-                    <li>• AMD CPU (16 cores)</li>
-                    <li>• Windows 11 + WSL2</li>
+                    <li>• MacBooks for prototyping & iteration</li>
+                    <li>• RunPod rental cluster for scale</li>
+                    <li>• RTX 3080 in Iceland (10 GB VRAM)</li>
+                    <li>• Distributed experiments across continents</li>
                   </ul>
                 </div>
               </div>
