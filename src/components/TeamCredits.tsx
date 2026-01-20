@@ -48,7 +48,7 @@ const TeamCredits = () => {
           <p className="text-xs text-muted-foreground mt-1 mb-4">(Order of the AI)</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
             Two engineers,<br />
-            <span className="text-gradient-ember">one mission</span>
+            <span className="text-gradient-ember">on a mission</span>
           </h2>
         </div>
 
