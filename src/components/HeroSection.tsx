@@ -33,6 +33,11 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          {/* Team banner */}
+          <div className="inline-flex items-center gap-3 mb-4 px-5 py-2.5 rounded-full border border-ember/50 bg-gradient-to-r from-ember/20 via-ember/10 to-ember/20 backdrop-blur-sm animate-pulse">
+            <span className="text-lg font-display font-bold text-ember tracking-wide">⚡ Team Gervigreindarreglan ⚡</span>
+          </div>
+          
           {/* Competition badge */}
           <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-glacier/30 bg-background/50 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-glacier animate-pulse" />

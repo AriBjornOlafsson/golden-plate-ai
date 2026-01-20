@@ -21,6 +21,7 @@ const IcelandicDemo = () => {
   const [displayText, setDisplayText] = useState("");
   const [showPrediction, setShowPrediction] = useState(false);
   const [activePrediction, setActivePrediction] = useState("");
+  const [confidence, setConfidence] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -70,6 +71,8 @@ const IcelandicDemo = () => {
     if (!showPrediction) {
       const predTimer = setTimeout(() => {
         setActivePrediction(step.prediction);
+        // Generate variable confidence between 87% and 98%
+        setConfidence(87 + Math.random() * 11);
         setShowPrediction(true);
       }, 400);
       return () => clearTimeout(predTimer);
@@ -132,7 +135,7 @@ const IcelandicDemo = () => {
                 <span className="text-muted-foreground">Prediction:</span>
                 <span className="font-mono text-glacier">"{activePrediction}"</span>
                 <span className="text-muted-foreground">•</span>
-                <span className="text-ember font-mono">93.2% confidence</span>
+                <span className="text-ember font-mono">{confidence.toFixed(1)}% confidence</span>
               </div>
             </div>
 
