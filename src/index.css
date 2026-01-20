@@ -243,3 +243,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground) / 0.5);
 }
+
+/* Prevent Dark Reader from inverting */
+img, video, canvas, [data-darkreader-inline-bgcolor] {
+  filter: none !important;
+}
