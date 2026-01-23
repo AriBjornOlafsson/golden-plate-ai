@@ -25,9 +25,9 @@ const Footer = () => {
 
           {/* Competition badge */}
           <div className="flex items-center gap-2 px-4 py-2 rounded-lg border border-glacier/30 bg-glacier/5">
-            <span className="text-sm font-mono text-glacier">1.6734 bpb</span>
+            <span className="text-sm font-mono text-glacier">1.65 bpb</span>
             <span className="text-muted-foreground">|</span>
-            <span className="text-sm font-mono text-ember">991 KB</span>
+            <span className="text-sm font-mono text-ember">949 KB</span>
           </div>
         </div>
 

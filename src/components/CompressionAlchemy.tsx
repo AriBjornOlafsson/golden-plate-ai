@@ -71,7 +71,7 @@ const CompressionAlchemy = () => {
               <FileArchive className="w-8 h-8 text-ember" />
             </div>
             <div className="text-sm font-mono text-muted-foreground mb-2">int8 + LZMA</div>
-            <div className="text-3xl font-mono font-bold text-gradient-ember">991 KB</div>
+            <div className="text-3xl font-mono font-bold text-gradient-ember">949 KB</div>
             <div className="text-xs text-ember mt-2">Victory ✓</div>
           </div>
         </div>

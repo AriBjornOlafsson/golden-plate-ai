@@ -58,10 +58,10 @@ const HeroSection = () => {
           
           {/* Stats row */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-12 mt-12 mb-16">
-            <StatItem value="1.6734" label="bits per byte" highlight />
+            <StatItem value="1.65" label="bits per byte" highlight />
             <StatItem value="<1MB" label="zip size" />
             <StatItem value="256" label="byte vocabulary" />
-            <StatItem value="1.6M+" label="parameters" />
+            <StatItem value="1.62M" label="parameters" />
           </div>
           
           {/* Tagline */}

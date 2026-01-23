@@ -10,7 +10,7 @@ const terminalLines = [
   { type: "command", text: "$ nvidia-smi" },
   { type: "output", text: "RTX 3080 | 76°C | 10GB VRAM | Ready." },
   { type: "command", text: "$ python train_neural.py --embed 160 --hidden 384" },
-  { type: "output", text: "Epoch 20/20 | Loss: 1.6734 | Time: 4h 23m ✓" },
+  { type: "output", text: "Epoch 20/20 | Val BPB: 1.57 | Grader: 1.65 | Time: 4h 23m ✓" },
 ];
 
 const RemoteOps = () => {

@@ -141,10 +141,10 @@ const IcelandicDemo = () => {
 
             {/* Stats footer */}
             <div className="mt-8 pt-4 border-t border-border/50 flex flex-wrap gap-6 text-xs font-mono text-muted-foreground">
-              <span>Model: <span className="text-glacier">ByteLM-GRU</span></span>
-              <span>Size: <span className="text-ember">999,847 bytes</span></span>
-              <span>Context: <span className="text-foreground">512 bytes</span></span>
-              <span>BPB: <span className="text-glacier">1.6734</span></span>
+              <span>Model: <span className="text-glacier">GRU + N-gram Cache</span></span>
+              <span>Size: <span className="text-ember">949 KB</span></span>
+              <span>Context: <span className="text-foreground">256 bytes</span></span>
+              <span>BPB: <span className="text-glacier">1.65</span></span>
             </div>
           </div>
         </div>

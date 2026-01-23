@@ -6,7 +6,7 @@ const results = [
     id: "baseline-unigram-001",
     model: "Unigram Baseline",
     config: "n=1",
-    valBpb: "4.7641",
+    valBpb: "4.76",
     graderBpb: "—",
     size: "2.7 KB",
     highlight: false,
@@ -15,7 +15,7 @@ const results = [
     id: "ngram-2-002",
     model: "Bigram",
     config: "n=2, min_count=2",
-    valBpb: "3.5072",
+    valBpb: "3.51",
     graderBpb: "—",
     size: "60 KB",
     highlight: false,
@@ -24,27 +24,36 @@ const results = [
     id: "neural-e128-h320-L2",
     model: "GRU 2-Layer",
     config: "e128 h320 L2",
-    valBpb: "1.6884",
-    graderBpb: "—",
+    valBpb: "1.727",
+    graderBpb: "1.727",
     size: "756 KB",
     highlight: false,
   },
   {
     id: "neural-e128-h368-L2-full",
-    model: "GRU + LZMA",
+    model: "GRU Scaled",
     config: "e128 h368 L2",
-    valBpb: "1.7120",
-    graderBpb: "1.6817",
+    valBpb: "1.712",
+    graderBpb: "1.682",
     size: "911 KB",
     highlight: false,
   },
   {
-    id: "neural-e160-h384-L2",
-    model: "Champion",
+    id: "neural-e160-h384-L2-4gb",
+    model: "GRU + 4GB Data",
     config: "e160 h384 L2",
-    valBpb: "1.7030",
-    graderBpb: "1.6734",
-    size: "991 KB",
+    valBpb: "1.571",
+    graderBpb: "~1.66",
+    size: "950 KB",
+    highlight: false,
+  },
+  {
+    id: "hybrid-final",
+    model: "Hybrid (GRU + N-gram Cache)",
+    config: "e160 h384 L2 + cache",
+    valBpb: "1.57",
+    graderBpb: "1.65",
+    size: "949 KB",
     highlight: true,
   },
 ];
@@ -83,25 +92,20 @@ const ResultsSection = () => {
         </div>
 
         {/* Achievement cards */}
-        <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-16 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="stat-card text-center">
-            <Trophy className="w-8 h-8 text-ember mx-auto mb-3" />
-            <div className="text-2xl font-mono font-bold text-gradient-ember">2nd</div>
-            <div className="text-xs text-muted-foreground mt-1">Overall Rank</div>
-          </div>
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="stat-card text-center">
             <Target className="w-8 h-8 text-glacier mx-auto mb-3" />
-            <div className="text-2xl font-mono font-bold">1.6734</div>
+            <div className="text-2xl font-mono font-bold text-gradient-ember">1.65</div>
             <div className="text-xs text-muted-foreground mt-1">Best BPB</div>
           </div>
           <div className="stat-card text-center">
             <Medal className="w-8 h-8 text-glacier mx-auto mb-3" />
-            <div className="text-2xl font-mono font-bold">991 KB</div>
+            <div className="text-2xl font-mono font-bold">949 KB</div>
             <div className="text-xs text-muted-foreground mt-1">Under Limit</div>
           </div>
           <div className="stat-card text-center">
             <Award className="w-8 h-8 text-glacier mx-auto mb-3" />
-            <div className="text-2xl font-mono font-bold">1.6M+</div>
+            <div className="text-2xl font-mono font-bold">1.62M</div>
             <div className="text-xs text-muted-foreground mt-1">Parameters</div>
           </div>
         </div>

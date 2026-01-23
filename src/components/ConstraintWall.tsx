@@ -3,11 +3,11 @@ import { HardDrive, Cpu, Clock, Database, Wifi, Layers } from "lucide-react";
 
 const constraints = [
   { icon: HardDrive, label: "Zip Size", value: "≤ 1 MB", note: "1,048,576 bytes exactly" },
-  { icon: Database, label: "Uncompressed", value: "≤ 50 MB", note: "Room to breathe" },
+  { icon: Database, label: "Memory Limit", value: "8 GB", note: "RAM constraint" },
   { icon: Cpu, label: "CPU Only", value: "No GPU", note: "Pure computation" },
   { icon: Wifi, label: "Network", value: "None", note: "Offline inference" },
-  { icon: Clock, label: "Time Limit", value: "10 min", note: "Strictest interpretation" },
-  { icon: Layers, label: "Context", value: "≤ 512 bytes", note: "We use 256 for speed" },
+  { icon: Clock, label: "Time Limit", value: "60 min", note: "Inference time limit" },
+  { icon: Layers, label: "Context", value: "256 bytes", note: "Chosen for speed" },
 ];
 
 const ConstraintWall = () => {
@@ -50,8 +50,8 @@ const ConstraintWall = () => {
             <span className="text-glacier">glacial throughput</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            The competition rules carved our design space. Some docs say 10 minutes, others say 60. 
-            Some say 4 GB RAM, others 8 GB. We chose the strictest limits to be safe.
+            The competition rules carved our design space: 1 MB zip limit, 8 GB memory,
+            60 minutes inference time, and CPU-only execution.
           </p>
         </div>
 
