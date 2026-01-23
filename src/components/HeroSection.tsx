@@ -38,11 +38,7 @@ const HeroSection = () => {
             <span className="text-lg font-display font-bold text-ember tracking-wide">⚡ Team Gervigreindarreglan ⚡</span>
           </div>
           
-          {/* Competition badge */}
-          {/* <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-glacier/30 bg-background/50 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-glacier animate-pulse" />
-            <span className="text-sm font-mono text-glacier">GKI2026 • 2nd Place Overall</span>
-          </div> */}
+          {/* Competition badge - Removed */}
           
           {/* Main title */}
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
