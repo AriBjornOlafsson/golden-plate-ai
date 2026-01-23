@@ -5,7 +5,7 @@ const terminalLines = [
   { type: "comment", text: "# Training a model from 4,000 km away..." },
   { type: "command", text: "$ tailscale status" },
   { type: "output", text: "100.x.x.x    monster    tagged-devices linux -" },
-  { type: "command", text: "$ ssh valdimar@monster" },
+  { type: "command", text: "$ ssh valdegg@EAGLE" },
   { type: "output", text: "Welcome to Ubuntu 22.04 LTS" },
   { type: "command", text: "$ nvidia-smi" },
   { type: "output", text: "RTX 3080 | 76°C | 10GB VRAM | Ready." },
@@ -80,7 +80,7 @@ const RemoteOps = () => {
                   <div className="w-3 h-3 rounded-full bg-ember/60" />
                   <div className="w-3 h-3 rounded-full bg-glacier/60" />
                 </div>
-                <span className="text-xs font-mono text-muted-foreground ml-2">valdimar@monster ~ training</span>
+                <span className="text-xs font-mono text-muted-foreground ml-2">valdegg@EAGLE ~ training</span>
               </div>
               
               {/* Terminal content */}

@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
+  { label: "Demo", href: "#demo" },
   { label: "Constraints", href: "#constraints" },
   { label: "Data", href: "#data" },
-  { label: "Models", href: "#models" },
+  { label: "Methods", href: "#methods" },
+  { label: "Experiments", href: "#experiments" },
   { label: "Compression", href: "#compression" },
   { label: "Results", href: "#results" },
   { label: "Team", href: "#team" },

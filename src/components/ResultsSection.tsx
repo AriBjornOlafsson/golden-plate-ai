@@ -91,6 +91,21 @@ const ResultsSection = () => {
           </h2>
         </div>
 
+        {/* Baseline context */}
+        <div className={`max-w-4xl mx-auto mb-10 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="stat-card text-center">
+            <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-3">
+              Reference baselines (bpb ↓ is better)
+            </div>
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+              <span>Random guessing: <span className="text-foreground">~8 bpb</span></span>
+              <span>Unigram: <span className="text-foreground">4.76 bpb</span></span>
+              <span>Bigram: <span className="text-foreground">3.51 bpb</span></span>
+              <span>Best: <span className="text-gradient-ember font-bold">1.65 bpb</span></span>
+            </div>
+          </div>
+        </div>
+
         {/* Achievement cards */}
         <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="stat-card text-center">
